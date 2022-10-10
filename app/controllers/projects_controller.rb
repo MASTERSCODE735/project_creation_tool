@@ -8,11 +8,15 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1 or /projects/1.json
   def show
+    @project = Project.find(params[:id])
+    @tasks = @project.tasks
+    # byebug
   end
 
   # GET /projects/new
   def new
     @project = Project.new
+    @tasks = @project.tasks.build
   end
 
   # GET /projects/1/edit
@@ -22,7 +26,6 @@ class ProjectsController < ApplicationController
   # POST /projects or /projects.json
   def create
     @project = Project.new(project_params)
-
     respond_to do |format|
       if @project.save
         format.html { redirect_to project_url(@project), notice: "Project was successfully created." }
@@ -50,7 +53,6 @@ class ProjectsController < ApplicationController
   # DELETE /projects/1 or /projects/1.json
   def destroy
     @project.destroy
-
     respond_to do |format|
       format.html { redirect_to projects_url, notice: "Project was successfully destroyed." }
       format.json { head :no_content }
@@ -65,6 +67,6 @@ class ProjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def project_params
-      params.require(:project).permit(:name)
+      params.require(:project).permit(:name, tasks_attributes: [:id, :description, :_destroy])
     end
 end
