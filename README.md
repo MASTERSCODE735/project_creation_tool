@@ -1,6 +1,6 @@
-Ruby >= ruby 2.6.1
+Ruby version 2.6.1
 and 
-Rails >= 6.0.6
+Rails version 6.0.6
 
 
 Tecnologies used:
@@ -15,8 +15,12 @@ Installation:
 $ git clone https://github.com/MASTERSCODE735/project_creation_tool
 
 $ cd project_creation_tool
-$ gem bundle install
+
+$ bundle install
+
 $ npm install
-$ yarn add bootstrap jquery pooper.js
+
+if  Your Yarn packages are out of date!
+  Please run `yarn install --check-files` to update.
 
 $ rake db:migrate
