@@ -12,7 +12,7 @@ Bootstrap
 SQLite
 
 Installation:
-$ git clone https://github.com/danilomeneghel/ruby_on_rails.git
+$ git clone https://github.com/MASTERSCODE735/project_creation_tool
 
 $ cd project_creation_tool
 $ gem bundle install
