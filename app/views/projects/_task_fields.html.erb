@@ -1,7 +1,9 @@
   <div class='nested-fields'>
-    <div class="field">
-      <%= f.label :description %>
-      <%= f.text_field :description %>
+        <div class="field">
+            <%= f.label "Task Name:" %> 
+            <%= f.text_field :description %>
+             <button type="button" class="moveprevbtn"><%= link_to_remove_association "Remove Task", f %></button> 
+          </div> 
+           <br>
     </div>
-    <%= link_to_remove_association "remove task", f %>
   </div>
