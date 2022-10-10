@@ -1,24 +1,19 @@
-# README
+Ruby >= ruby 2.6.1
+Rails >= 6.0.6
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+Tecnologies used:
+Ruby
+Rails
+CSS and SCSS
+JS
+Bootstrap
+SQLite
 
-* Ruby version
+Installation:
+$ git clone https://github.com/danilomeneghel/ruby_on_rails.git
 
-* System dependencies
+$ cd project_creation_tool
+$ gem bundle install
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+$ rake db:migrate
