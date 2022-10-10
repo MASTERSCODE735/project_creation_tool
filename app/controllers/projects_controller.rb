@@ -3,14 +3,13 @@ class ProjectsController < ApplicationController
 
   # GET /projects or /projects.json
   def index
-    @projects = Project.all
+    @projects = Project.all.page(params[:page]).per(10)
   end
 
   # GET /projects/1 or /projects/1.json
   def show
     @project = Project.find(params[:id])
     @tasks = @project.tasks
-    # byebug
   end
 
   # GET /projects/new
@@ -67,6 +66,6 @@ class ProjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def project_params
-      params.require(:project).permit(:name, tasks_attributes: [:id, :description, :_destroy])
+      params.require(:project).permit(:name,:page, tasks_attributes: [:id, :description, :_destroy])
     end
 end

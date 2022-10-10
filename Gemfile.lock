@@ -219,7 +219,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   cocoon
   jbuilder (~> 2.7)
-  kaminari
+  kaminari (~> 1.2.1)
   listen (~> 3.2)
   puma (~> 4.1)
   rails (~> 6.0.5, >= 6.0.5.1)
