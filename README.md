@@ -16,5 +16,7 @@ $ git clone https://github.com/danilomeneghel/ruby_on_rails.git
 
 $ cd project_creation_tool
 $ gem bundle install
+$ npm install
+$ yarn add bootstrap jquery pooper.js
 
 $ rake db:migrate
