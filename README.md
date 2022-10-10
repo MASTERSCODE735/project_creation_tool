@@ -1,4 +1,5 @@
 Ruby >= ruby 2.6.1
+and 
 Rails >= 6.0.6
 
 
