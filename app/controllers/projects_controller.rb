@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects or /projects.json
   def index
-    @projects = Project.all.page(params[:page]).per(10)
+    @projects = Project.all.eager_load(:tasks).page(params[:page]).per(10)
   end
 
   # GET /projects/1 or /projects/1.json
@@ -27,7 +27,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     respond_to do |format|
       if @project.save
-        format.html { redirect_to action: "index", notice: "Project was successfully created." }
+        format.html { redirect_to project_url(@project), notice: "Project was successfully created." }
         format.json { render :show, status: :created, location: @project }
       else
         format.html { render :new, status: :unprocessable_entity }

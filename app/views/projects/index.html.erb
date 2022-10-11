@@ -23,7 +23,7 @@
 		<% @projects.each do |project| %>
 		  <tr>
 			<td style="font-size:18px"><%= project.name %></td>
-			<td style="font-size:18px"><%= project.tasks.count %></td>
+			<td style="font-size:18px"><%= project.tasks.size %></td>
 			<td class="text-center">
 				<%= link_to project, :class => "btn btn-info" do %>
 					<i class="fa fa-eye"></i> Show

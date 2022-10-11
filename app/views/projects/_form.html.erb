@@ -1,28 +1,27 @@
 <%= form_for @project do |f| %>
- <div class="container">
-  <div class="field">
-    <%= f.label "Project Name" %>
-    <%= f.text_field :name %>
-  </div>
+  <div class="container">
+    <div class="field">
+      <%= f.label "Project Name" %>
+      <%= f.text_field :name %>
+    </div>
   </div>
   <div class="container border">
-  <h3>Tasks</h3>
-  <div class='links'>
-    <button type="button"><%= link_to_add_association 'Add New Task', f, :tasks, partial: 'task_fields' %></button>
+    <h3>Tasks</h3>
+    <div class='links'>
+        <button type="button"><%= link_to_add_association 'Add New Task', f, :tasks, partial: 'task_fields', data: {association_insertion_method: "after"} %></button>
+    </div>
+    <div id='tasks'>
+      <%= f.fields_for :tasks do |task| %>
+        <%= render 'task_fields', :f => task %>
+      <% end %>
+    </div>
   </div>
   <br>
-  <br>
-  <div id='tasks'>
-    <%= f.fields_for :tasks do |task| %>
-      <%= render 'task_fields', :f => task %>
-    <% end %>
-  </div>
-  </div>
   <div class="container">
-  <% if params[:id].present? %>
-    <%= f.submit 'Update Project' %>
-  <%else%>
-    <%= f.submit 'Create Project' %>
-  <%end%>
+    <% if params[:id].present? %>
+      <%= f.submit 'Update Project' %>
+    <%else%>
+      <%= f.submit 'Create Project' %>
+    <%end%>
   </div>
 <% end %>
